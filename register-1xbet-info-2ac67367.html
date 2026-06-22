@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>关于 1xbet – 站点说明与入门介绍</title>
+  <style>
+    /* 基础重置 + 暖色渐变背景 */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+      background: linear-gradient(145deg, #f8e7d0 0%, #f3d5b0 50%, #ecc39a 100%);
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: flex-start;
+      padding: 2.5rem 1.2rem;
+      line-height: 1.6;
+      color: #2e241e;
+    }
+
+    /* 白色内容卡片 */
+    .card {
+      max-width: 880px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 40px 40px 32px 32px;
+      box-shadow: 0 20px 40px -12px rgba(100, 60, 30, 0.25), 0 8px 16px rgba(0, 0, 0, 0.03);
+      padding: 2.8rem 2.6rem;
+      transition: box-shadow 0.25s ease;
+
+      /* 柔和内阴影增加层次 */
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.6), 0 20px 36px -10px rgba(92, 56, 28, 0.22);
+    }
+
+    @media (max-width: 600px) {
+      body { padding: 1.5rem 0.8rem; }
+      .card { padding: 2rem 1.4rem; border-radius: 28px 28px 24px 24px; }
+    }
+
+    /* 文章头部 */
+    .article-header {
+      margin-bottom: 2.2rem;
+      border-bottom: 2px solid #f0ddd0;
+      padding-bottom: 0.5rem;
+    }
+
+    .article-header h1 {
+      font-size: 2.2rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      color: #3f2c20;
+      margin-bottom: 0.2rem;
+      line-height: 1.2;
+    }
+
+    .article-header .sub {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 1.4rem;
+      font-size: 0.9rem;
+      color: #6f5544;
+      margin-top: 0.1rem;
+    }
+
+    .sub span {
+      background: #f8ede2;
+      padding: 0.1rem 0.8rem;
+      border-radius: 24px;
+      font-size: 0.8rem;
+      color: #563f30;
+    }
+
+    /* 导语 */
+    .lead {
+      font-size: 1.1rem;
+      background: #fbf3ea;
+      padding: 1.2rem 1.6rem;
+      border-radius: 28px;
+      margin-bottom: 2rem;
+      border-left: 5px solid #d9b088;
+      color: #3c2a1f;
+    }
+
+    /* 正文段落 */
+    p {
+      margin-bottom: 1.25rem;
+      font-weight: 400;
+    }
+
+    p strong {
+      color: #7f5c3f;
+      font-weight: 550;
+    }
+
+    /* 引用提示 (callout) */
+    .callout {
+      background: #faf1e7;
+      padding: 1.2rem 1.8rem;
+      border-radius: 40px 16px 16px 40px;
+      margin: 1.8rem 0 2rem 0;
+      border-left: 5px solid #c09875;
+      font-style: normal;
+      display: flex;
+      gap: 0.6rem 1rem;
+      align-items: baseline;
+      flex-wrap: wrap;
+    }
+
+    .callout::before {
+      content: "📌 提示";
+      font-weight: 600;
+      color: #7e5d42;
+      background: #eedccc;
+      padding: 0 0.7rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      white-space: nowrap;
+    }
+
+    .callout p,
+    .callout div {
+      flex: 1;
+      margin: 0;
+      min-width: 200px;
+    }
+
+    /* 特点卡片式列表 (非表格，更像三个短段落) */
+    .feature-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.2rem;
+      margin: 1.8rem 0 1.6rem;
+    }
+
+    .feature-item {
+      flex: 1 1 160px;
+      background: #f7efe7;
+      padding: 0.9rem 1rem 0.8rem 1rem;
+      border-radius: 24px;
+      box-shadow: inset 0 1px 3px rgba(0,0,0,0.02);
+      transition: background 0.2s;
+    }
+
+    .feature-item h3 {
+      font-size: 1rem;
+      font-weight: 600;
+      color: #4b3324;
+      margin-bottom: 0.2rem;
+      border-bottom: 1px dotted #d7beaa;
+      padding-bottom: 0.1rem;
+    }
+
+    .feature-item p {
+      font-size: 0.9rem;
+      margin-bottom: 0;
+      color: #3d2e24;
+    }
+
+    /* FAQ 摘要 */
+    .faq-mini {
+      background: #fcf6f0;
+      border-radius: 28px;
+      padding: 1.2rem 1.5rem 1rem;
+      margin: 2rem 0 1.6rem;
+    }
+
+    .faq-mini h2 {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #4b3527;
+      margin-bottom: 0.6rem;
+    }
+
+    .faq-item {
+      border-bottom: 1px solid #ebdbcf;
+      padding: 0.5rem 0;
+    }
+
+    .faq-item:last-of-type {
+      border-bottom: 0;
+    }
+
+    .faq-question {
+      font-weight: 500;
+      color: #684d39;
+    }
+
+    .faq-answer {
+      font-size: 0.9rem;
+      color: #46352a;
+      margin-top: 0.15rem;
+    }
+
+    /* 访问句 / 结尾 */
+    .closing {
+      margin-top: 2.2rem;
+      padding-top: 1.2rem;
+      border-top: 2px solid #eddccf;
+      font-size: 1rem;
+    }
+
+    /* 链接按钮感 (圆角, 仿pill) */
+    a {
+      color: #ac7b58;
+      text-decoration: none;
+      font-weight: 500;
+      padding: 0.1rem 0.6rem;
+      border-radius: 40px;
+      background: transparent;
+      transition: all 0.2s ease;
+      border: 1px solid transparent;
+    }
+
+    a:hover {
+      background: #f0ded0;
+      border-color: #cba888;
+      color: #583e2b;
+    }
+
+    a:active {
+      background: #dfcabb;
+    }
+
+    /* 句子里的链接不要额外边距 */
+    .closing a,
+    p a {
+      padding: 0.05rem 0.3rem;
+    }
+
+    /* 辅助 */
+    .dot-divider {
+      color: #cdb29d;
+      margin: 0 0.3rem;
+    }
+
+    .quiet {
+      color: #6e5a4b;
+      font-size: 0.9rem;
+    }
+
+    hr {
+      border: 0;
+      height: 1px;
+      background: linear-gradient(to right, transparent, #ddc8b6, transparent);
+      margin: 1.8rem 0;
+    }
+
+    /* 引用标记 */
+    .reference-tip {
+      background: #f7ede3;
+      padding: 0.6rem 1.2rem;
+      border-radius: 60px;
+      display: inline-block;
+      font-size: 0.85rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="card" role="main">
+    <!-- 文章标题 -->
+    <header class="article-header">
+      <h1>关于 1xbet：平台背景与站点可信说明</h1>
+      <div class="sub">
+        <span>📋 介绍 · 说明</span>
+        <span>🕒 2025</span>
+      </div>
+    </header>
+
+    <!-- 导语 -->
+    <div class="lead">
+      <strong>▍ 为什么会有这个介绍页？</strong> 很多用户第一次接触到 <a href="https://register-1xbet.com">1xbet</a> 时，常会关心它是否正规、如何访问、以及有哪些基础功能。本文从信息梳理的角度，整理该站点的基本定位与可信特征，帮助新用户建立初步认知。
+    </div>
+
+    <!-- 正文 1：站点介绍 -->
+    <p>
+      <strong>1xbet</strong> 是一个面向国际用户的综合性数字服务平台，提供体育赛事预览、电子竞技、各类游戏及互动娱乐内容。自2007年进入市场以来，该平台逐渐覆盖超过70个国家和地区，界面支持多语种切换，中文用户也可顺畅浏览。其运营实体持有库拉索等司法管辖区颁发的合法牌照，因此在合规层面有基本保障。许多用户在搜索“1xbet”时，常常直接进入 <strong>register-1xbet.com</strong> 域名完成注册流程，该域名作为官方入口之一，访问稳定且功能完整。
+    </p>
+
+    <!-- 正文 2：切入可信说明 -->
+    <p>
+      从技术安全和数据保护角度看，该站点使用标准 SSL 加密传输，用户信息在提交时处于加密状态。同时，平台定期接受第三方审计，资金流水与赔率计算均有公开记录。尽管网络上有不同评价，但就运营历史与用户基数而言，<strong>1xbet</strong> 在成熟市场已积累数千万活跃账户。任何线上服务都存在一定风险，建议用户自行验证信息、量力参与，并仔细阅读条款。
+    </p>
+
+    <!-- 引用提示 (callout) -->
+    <div class="callout">
+      <div>
+        <p><strong>可信参考</strong> —— 该域名（register-1xbet.com）直接对应官方注册页面，无中间跳转，域名注册信息与平台主体一致。如遇到克隆站点，可通过对比 SSL 证书颁发机构及页面底部版权年份来辨别真伪。</p>
+      </div>
+    </div>
+
+    <!-- 三个特点区块（卡片式） -->
+    <div class="feature-grid">
+      <div class="feature-item">
+        <h3>📋 界面与语言</h3>
+        <p>中文界面完整，简化注册流程，支持邮箱、手机号及社交媒体账户绑定。新手引导清晰。</p>
+      </div>
+      <div class="feature-item">
+        <h3>🔐 安全与认证</h3>
+        <p>采用双重验证（2FA）可选，交易密码独立，出金环节需完成 KYC 身份认证，降低账户风险。</p>
+      </div>
+      <div class="feature-item">
+        <h3>🌍 多终端覆盖</h3>
+        <p>提供 Web、移动端网页及原生 App 版本，iOS 与 Android 均支持，响应式设计适配平板。</p>
+      </div>
+    </div>
+
+    <!-- 场景说明段落 -->
+    <p>
+      <strong>典型使用场景</strong>：一位新用户通过搜索引擎找到 <a href="https://register-1xbet.com">1xbet</a> 的注册入口，填写基本信息并设置安全验证，随后浏览体育赛事赔率或电子游戏分类。平台提供预存款选项，同时设有免费体验模式（部分功能无需充值即可试用）。在熟悉界面逻辑后，很多用户会选择开通账户并完成首笔交易。需要注意的是，不同国家/地区的访问限制存在差异，如果遇到加载问题，可尝试切换网络环境或使用官方推荐的镜像地址（通常公布在官方社交媒体上）。
+    </p>
+
+    <!-- 小分隔 + FAQ 摘要 -->
+    <hr />
+
+    <div class="faq-mini">
+      <h2>❓ 常见疑问摘要</h2>
+      <div class="faq-item">
+        <div class="faq-question">Q: 1xbet 注册需要提供哪些资料？</div>
+        <div class="faq-answer">A: 基本注册只需要用户名、密码、邮箱或手机号。后续提现前需完善身份验证（身份证件、住址证明）。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Q: 如何确认我访问的是官方正版站点？</div>
+        <div class="faq-answer">A: 检查域名是否为 register-1xbet.com 或官方公示的域名，同时查看页脚版权信息和 SSL 锁标识。不要相信来历不明的短链接。</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-question">Q: 是否支持中文客服？</div>
+        <div class="faq-answer">A: 支持，在线聊天与邮件均提供中文服务，响应时间通常在数分钟到数小时不等。</div>
+      </div>
+    </div>
+
+    <!-- 引用 / 额外提示 -->
+    <div class="reference-tip">
+      ⚡ 提示：始终从官方渠道获取最新地址，避免使用第三方代理输入个人数据。
+    </div>
+
+    <!-- 访问句 / 结语 -->
+    <div class="closing">
+      <p>
+        如果你正在评估是否使用 <strong>1xbet</strong>，建议先完整浏览其界面与条款。平台的核心入口为 <a href="https://register-1xbet.com">1xbet</a>，所有注册与登录操作都在此完成。请保持信息渠道的单一性，切勿通过非官方链接提交密码。希望这篇介绍能帮助你做出更清晰的判断。
+      </p>
+      <p class="quiet" style="margin-top: 0.6rem;">
+        — 本文仅作信息说明，不构成任何投资或使用建议。请根据当地法律及个人判断决定。
+      </p>
+    </div>
+
+    <!-- 极简 footer 符号 -->
+    <div style="margin-top: 2rem; font-size: 0.7rem; color: #a68b78; text-align: center; letter-spacing: 1px;">
+      · · · 内容基于公开资料整理 · · ·
+    </div>
+  </div>
+</body>
+</html>
